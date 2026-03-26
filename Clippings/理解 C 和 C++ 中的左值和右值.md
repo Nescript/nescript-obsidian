@@ -1,13 +1,13 @@
 ---
 title: Understanding lvalues and rvalues in C and C++ - Eli Bendersky's website
-source: https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c
 author:
   - Eli Bendersky
 published: 2001-12-15
-created: 2026-03-24
-description:
-tags:
-  - clippings
+created: 2026-03-25
+categories:
+  - "[[Clippings]]"
+url: "https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c"
+topics: []
 ---
 The terms *lvalue* and *rvalue* are not something one runs into often in C/C++ programming, but when one does, it's usually not immediately clear what they mean. The most common place to run into these terms are in compiler error & warning messages. For example, compiling the following with gcc:  
 在 C/C++ 编程中， *左值* 和 *右值* 这两个术语并不常见，但一旦遇到，通常很难立即理解它们的含义。最常遇到这些术语的地方是编译器错误和警告信息中。例如，使用 gcc 编译以下代码：
