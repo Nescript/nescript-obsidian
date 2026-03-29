@@ -14,9 +14,10 @@ status: in-progress
 ### 核心流程
 
 ### 待读路径
- - [[From power on to standup and stay balance]]
- - [[State machine]]
- - [[Recovery]]
+- [[series leg controller node]]
+- [[From power on to standup and stay balance]]
+- [[State machine]]
+- [[Recovery]]
 
 ## 关键概念
 
