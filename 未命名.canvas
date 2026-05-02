@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"e9bc66ac9ab82f51","x":-560,"y":-177,"width":250,"height":60,"type":"text","text":"左摇杆指令（云台旋转）"},
+		{"id":"f7ab6712a1c28230","x":-560,"y":-80,"width":250,"height":51,"type":"text","text":"旋钮（变速小陀螺）"},
+		{"id":"fd6d629b350d96f3","x":-560,"y":0,"width":250,"height":60,"type":"text","text":"左拨杆（变腿长）"},
+		{"id":"cb8b9c22e511b7eb","x":-560,"y":100,"width":250,"height":60,"type":"text","text":"右摇杆指令（移动指令）"},
+		{"id":"b5ebfda3e719aa32","x":-560,"y":200,"width":250,"height":98,"type":"text","text":"右拨杆下：倒下\n右拨杆中：正常\n右拨杆上：键盘控制"},
+		{"id":"925783b03650fa30","x":660,"y":-700,"width":250,"height":60,"type":"text","text":"chassis base有cmd_chassis的callback"},
+		{"id":"22fe8e6531e64e9b","x":270,"y":-177,"width":250,"height":60,"type":"text","text":"chassis base订阅cmd_vel和cmd_chassis"},
+		{"id":"7884d9d7f44e26d7","x":-120,"y":-84,"width":250,"height":60,"type":"text","text":"/cmd_vel"},
+		{"id":"aa3f6ac95d59183e","x":660,"y":-110,"width":250,"height":60,"type":"text","text":"/cmd_chassis 的 follw_source_frame会变"},
+		{"id":"67316629d26c52f2","x":940,"y":-110,"width":250,"height":60,"type":"text","text":"yaw_reverse_frame"},
+		{"id":"b2a4998f9e8c4976","x":940,"y":-207,"width":250,"height":60,"type":"text","text":"flank_frame"},
+		{"id":"fdac6b978a13b269","x":940,"y":-24,"width":250,"height":60,"type":"text","text":"yaw"},
+		{"id":"fe8e58dce6012ef5","x":640,"y":0,"width":250,"height":60,"type":"text","text":"cmd_chassis 来自 command sender,包含加速度数值"},
+		{"id":"62f08086e8c711b7","x":492,"y":174,"width":250,"height":60,"type":"text","text":"cmd_vel来自Vel2DCommandSender"},
+		{"id":"7ddae277e3f7d5a3","x":840,"y":174,"width":520,"height":246,"type":"text","text":"```cpp\nvoid ChassisGimbalManual::sendCommand(const ros::Time& time)\n{\n  if (wheels_offline_)\n    vel_cmd_sender_->setZero();\n  chassis_cmd_sender_->sendChassisCommand(time, is_gyro_);\n  vel_cmd_sender_->sendCommand(time);\n  gimbal_cmd_sender_->sendCommand(time);\n}\n```"},
+		{"id":"972d372d6adca498","x":425,"y":379,"width":317,"height":161,"type":"text","text":"# 速度指令逻辑：\nmanual内，按键触发后调用vel_cmd_sender 的 setLinearX/Y/ZVel 方法"}
+	],
+	"edges":[
+		{"id":"05c896f8f3161535","fromNode":"f7ab6712a1c28230","fromSide":"right","toNode":"7884d9d7f44e26d7","toSide":"left"},
+		{"id":"6769a61050372aa4","fromNode":"cb8b9c22e511b7eb","fromSide":"right","toNode":"7884d9d7f44e26d7","toSide":"left"},
+		{"id":"cbc8ef6e9f42f17b","fromNode":"7884d9d7f44e26d7","fromSide":"right","toNode":"22fe8e6531e64e9b","toSide":"left"},
+		{"id":"6c203e22db03d5fa","fromNode":"aa3f6ac95d59183e","fromSide":"right","toNode":"67316629d26c52f2","toSide":"left"},
+		{"id":"ffb4e04533106831","fromNode":"aa3f6ac95d59183e","fromSide":"right","toNode":"b2a4998f9e8c4976","toSide":"left"},
+		{"id":"acd7c120bcf25ddf","fromNode":"aa3f6ac95d59183e","fromSide":"right","toNode":"fdac6b978a13b269","toSide":"left"}
+	]
+}

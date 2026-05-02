@@ -1,0 +1,2 @@
+mode manager本身的重点是维护了一个map,存储所有模式的指针。
+mode manager统一管理pid控制器，
